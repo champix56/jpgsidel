@@ -11,6 +11,10 @@ function Produit(params) {
      * Code à barre du produit
      */
     this.EAN = '347254565';
+    /**
+    * 
+    */
+   this.domNode = document.querySelector('.produit');
     //construction
     /**
      * construction d'un produit
@@ -38,27 +42,45 @@ function Produit(params) {
     this.setDesc = function (value) { _desc = value; }
     this.getImg = function () { return _img; }
     this.setImg = function (value) { _img = value; }
-    /**
-    * 
-    */
-    this.domNode = document.querySelector('.produit');
+    //creation d'unalias pour this
+    var vm=this;
+    //fonction de gestion de levenement click
+    this.onProductClick=function(event){
+        console.log(event);
+        alert('mon objet est cliqué');
+        console.log(vm);
+        //usage de l'alias suite a la delegation d'usage de la,fonction
+        //this=> l'evenement declenché
+        
+        vm.domNode.classList.add('clicked');
+    }
+ 
+ 
+    
     /**
      * Fonction pour mettre a jour l'affichage d'un produit
      */
     this.showProduct = function () {
-        
-        this.domNode.querySelector('h1').innerHTML=_name;
+        this.domNode.addEventListener('click',this.onProductClick);
+
+        this.domNode.querySelector('h1').innerHTML = _name;
+
         var cheminImg = (_img !== undefined ? _img : 'img/paquet.png');
         var img_html = this.domNode.querySelector('img').src = cheminImg;
+
         //description
         var desc = this.domNode.querySelector('.descriptionProduit');
+
         var descContent = document.createElement('div');
         descContent.innerHTML = (_desc !== undefined ? _desc : 'Sans commentaire');
+
         desc.append(descContent);
+
         //constitution du prix
         var balise = document.createElement('div');
-        balise.innerHTML = (_prix !== undefined ? _prix : 'inconnu');
+        balise.innerHTML = (_prix !== undefined ? _prix + '€' : 'inconnu');
         balise.classList.add('produit-prix');
+
         //ajout dans le parent
         desc.append(balise);
     }
