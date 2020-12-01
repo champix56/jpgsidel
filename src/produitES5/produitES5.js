@@ -2,7 +2,7 @@
  * objet function produit 
  * @param {Object} params objet parametre contenant les valeurs initial
  */
-function Produit(params) {
+export function Produit(params) {
     var _name;
     var _prix;
     var _img
@@ -84,7 +84,7 @@ function Produit(params) {
         //ajout dans le parent
         desc.append(balise);
     }
-    this.showProduct();
+    //this.showProduct();
 }
 
 var produit = new Produit({ name: 'mon produit func', prix: '2.54', desc: undefined });

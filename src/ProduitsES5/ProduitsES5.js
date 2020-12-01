@@ -2,7 +2,7 @@ var produits = [new Produit({ EAN: '0001', nom: 'p1', prix: 2.54 }), new Produit
 
 console.log(produits);
 
-function Produits() {
+export function Produits() {
     var _liste = [];
     this.get = function (index) { return _liste[index]; }
     this.cloneAt = function (index) { return Object.assign({}, _liste[index]); }
