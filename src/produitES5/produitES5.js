@@ -10,7 +10,7 @@ function Produit(params) {
     /**
      * Code à barre du produit
      */
-    this.EAN = '347254565';
+    this.EAN = params.EAN;
     /**
     * 
     */
@@ -40,8 +40,8 @@ function Produit(params) {
     this.setPrix = function (value) { _prix = value; }
     this.getDesc = function () { return _desc; }
     this.setDesc = function (value) { _desc = value; }
-    this.getImg = function () { return _img; }
-    this.setImg = function (value) { _img = value; }
+    this.getImg  = function () { return _img; }
+    this.setImg  = function (value) { _img = value; }
     //creation d'unalias pour this
     var vm=this;
     //fonction de gestion de levenement click
@@ -51,7 +51,7 @@ function Produit(params) {
         console.log(vm);
         //usage de l'alias suite a la delegation d'usage de la,fonction
         //this=> l'evenement declenché
-        
+
         vm.domNode.classList.add('clicked');
     }
  
