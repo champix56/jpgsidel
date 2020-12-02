@@ -2,29 +2,35 @@
  * objet function produit 
  * @param {Object} params objet parametre contenant les valeurs initial
  */
-function Produit(params) {
+export function Produit(params) {
     var _name;
+    var _id;
     var _prix;
     var _img
     var _desc;
     /**
      * Code à barre du produit
      */
-    this.EAN = params.EAN;
+    const regex=/\d{13}/;
+    const regexResult=regex.exec(params.EAN);
+    this.EAN =(regexResult!==null? params.EAN:undefined);
     /**
     * 
     */
-    this.domNode = document.querySelector('.produit');
+    this.domNode =params.node;
     //construction
     /**
      * construction d'un produit
      */
     function init() {
-        _name = params.name;
-        _prix = params.prix;
-        _img = params.img;
-        _desc = params.desc;
-
+        const regexImg = /^([\w.-]{1,}\/)+([\w.-]*)(.png|.jpg)$/;
+        _id     = params.id;
+        _name   = params.name;
+        _prix   = params.prix;
+        _img    = (regexImg.exec( params.img)!==null? params.img:'img/paquet.png');
+        _desc   = `description du produit portant le nom <span style="font-weight:900">:${params.name!==undefined? params.name:'produit sans nom'}</span><br/>suite de la description`;
+        
+        params.desc;
     }
     //execution de a construction
     init();
@@ -47,16 +53,13 @@ function Produit(params) {
     // this.onProductClick=function(event){
     this.onProductClick = (event) => {
         console.log(event);
-        alert('mon objet est cliqué');
+        alert('mon objet est cliqué id : '+_id);
         //console.log(vm);
         //usage de l'alias suite a la delegation d'usage de la,fonction
         //this=> l'evenement declenché
 
         this.domNode.classList.add('clicked');
     }
-
-
-
     /**
      * Fonction pour mettre a jour l'affichage d'un produit
      */
@@ -84,9 +87,9 @@ function Produit(params) {
         //ajout dans le parent
         desc.append(balise);
     }
-   // this.showProduct();
+  // this.showProduct();
 }
 
-var produit = new Produit({ name: 'mon produit func', prix: '2.54', desc: undefined });
+//var produit = new Produit({ name: 'mon produit func', prix: '2.54', desc: undefined });
 //var p2= Produit();
-console.log(produit);
+// console.log(produit);

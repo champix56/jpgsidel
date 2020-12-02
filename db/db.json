@@ -2,7 +2,6 @@
   "produits": [
     {
       "id": 1,
-      "name": "produit1",
       "EAN": "341215",
       "img": "img/paquet2.png",
       "prix": 2.54,

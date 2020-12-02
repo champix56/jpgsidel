@@ -3,6 +3,7 @@
  * @param {Object} params objet parametre contenant les valeurs initial
  */
 function Produit(params) {
+    var _id;
     var _name;
     var _prix;
     var _img
@@ -20,6 +21,7 @@ function Produit(params) {
      * construction d'un produit
      */
     function init() {
+        _id=params.id;
         _name = params.name;
         _prix = params.prix;
         _img = params.img;

@@ -1,3 +1,4 @@
+import {Produit} from '../produitES5/ProduitES6.js';
 
 class Produits extends Array {
     #_template=null;
@@ -8,8 +9,9 @@ class Produits extends Array {
         return fetch(url).then((resp) => { return resp.text() })
             .then((texthtml) => {
                 const parser = new DOMParser();
-                const template = parser.parseFromString(texthtml, 'text/html').body.childNodes;
+                const template = parser.parseFromString(texthtml, 'text/html');
                 console.log(template.innerHTML);
+                this.#_template=template;
                 return template;
             });
     }
@@ -19,8 +21,9 @@ class Produits extends Array {
             .then((objetJS) => {
 
                 console.log('Voici la valeur recu', objetJS);
+                this.splice(0);
                 objetJS.map((element, index) => {
-                    this.push(element);
+                    this.push(new Produit(element));
                 });
                 console.log(this);
                 return objetJS;
@@ -33,6 +36,11 @@ class Produits extends Array {
         Promise.all([this.loadFromRest(), this.loadTemplate()])
             .then(responses => {
                 console.log(responses)
+                this.map(elementInArray=>{
+                    elementInArray.domNode=this.#_template.cloneNode(this.#_template,true).querySelector('.produit');
+                    elementInArray.showProduct();
+                    document.querySelector('#wrapper').append(elementInArray.domNode);
+                });  
             });
     }
     findByEAN(EAN) {
