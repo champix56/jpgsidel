@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "lite-server"
+    "serve": "lite-server",
+    "json": "json-server -p 5629 db/db.json",
+    "start": "npm run serve | npm run json"
   },
   "keywords": [],
   "author": "",
