@@ -1,0 +1,9 @@
+{
+    "produits":[
+        {"id":1, "name":"produit1", "EAN":"341215", "img":"img/paquet2.png", "prix":2.54, "desc":"description1"},
+        {"id":2,"name":"produit2", "EAN":"341215", "img":"img/paquet.png", "prix":2.54, "desc":"description2"},
+        {"id":3,"name":"produit3", "EAN":"341215", "img":"img/paquet2.png", "prix":25.4, "desc":"description3"},
+        {"id":4,"name":"produit4", "EAN":"341215", "img":"img/paquet.png", "prix":24, "desc":"description4"},
+        {"id":5,"name":"produit5", "EAN":"341215", "img":"img/paquet2.png", "prix":1.54, "desc":"description5"}
+    ]
+}
