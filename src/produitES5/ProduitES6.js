@@ -14,7 +14,7 @@ function Produit(params) {
     /**
     * 
     */
-   this.domNode = document.querySelector('.wrapper');
+    this.domNode = document.querySelector('.produit');
     //construction
     /**
      * construction d'un produit
@@ -40,28 +40,28 @@ function Produit(params) {
     this.setPrix = function (value) { _prix = value; }
     this.getDesc = function () { return _desc; }
     this.setDesc = function (value) { _desc = value; }
-    this.getImg  = function () { return _img; }
-    this.setImg  = function (value) { _img = value; }
-    //creation d'unalias pour this
-    var vm=this;
-    //fonction de gestion de levenement click
-    this.onProductClick=function(event){
+    this.getImg = function () { return _img; }
+    this.setImg = function (value) { _img = value; }
+   
+
+    // this.onProductClick=function(event){
+    this.onProductClick = (event) => {
         console.log(event);
         alert('mon objet est cliqué');
-        console.log(vm);
+        //console.log(vm);
         //usage de l'alias suite a la delegation d'usage de la,fonction
         //this=> l'evenement declenché
 
-        vm.domNode.classList.add('clicked');
+        this.domNode.classList.add('clicked');
     }
- 
- 
-    
+
+
+
     /**
      * Fonction pour mettre a jour l'affichage d'un produit
      */
     this.showProduct = function () {
-        this.domNode.addEventListener('click',this.onProductClick);
+        this.domNode.addEventListener('click', this.onProductClick);
 
         this.domNode.querySelector('h1').innerHTML = _name;
 
@@ -84,7 +84,7 @@ function Produit(params) {
         //ajout dans le parent
         desc.append(balise);
     }
-    //this.showProduct();
+   // this.showProduct();
 }
 
 var produit = new Produit({ name: 'mon produit func', prix: '2.54', desc: undefined });
