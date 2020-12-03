@@ -8,12 +8,12 @@
       "desc": "description1"
     },
     {
-      "id": 2,
-      "name": "produit2",
-      "EAN": "341215",
+      "name": "produit modif",
+      "prix": "8",
       "img": "img/paquet.png",
-      "prix": 2.54,
-      "desc": "description2"
+      "EAN": "1234567891236",
+      "desc": "description du produit portant le nom <span style=\"font-weight:900\">:produit modif</span><br/>suite de la description",
+      "id": 2
     },
     {
       "id": 3,
@@ -38,6 +38,46 @@
       "img": "img/paquet2.png",
       "prix": 1.54,
       "desc": "description5"
+    },
+    {
+      "name": "NouveauProduit",
+      "prix": "0.01",
+      "img": "vues/paquet.png",
+      "EAN": "1234567891234",
+      "desc": "description du produit portant le nom <span style=\"font-weight:900\">:NouveauProduit</span><br/>suite de la description",
+      "id": 6
+    },
+    {
+      "name": "NouveauProduit",
+      "prix": "0.01",
+      "img": "vues/paquet.png",
+      "EAN": "1234567891234",
+      "desc": "description du produit portant le nom <span style=\"font-weight:900\">:NouveauProduit</span><br/>suite de la description",
+      "id": 7
+    },
+    {
+      "name": "NouveauProduit",
+      "prix": "0.01",
+      "img": "vues/paquet.png",
+      "EAN": "1234567891234",
+      "desc": "description du produit portant le nom <span style=\"font-weight:900\">:NouveauProduit</span><br/>suite de la description",
+      "id": 8
+    },
+    {
+      "name": "NouveauProduit",
+      "prix": "0.01",
+      "img": "vues/paquet.png",
+      "EAN": "1234567891234",
+      "desc": "description du produit portant le nom <span style=\"font-weight:900\">:NouveauProduit</span><br/>suite de la description",
+      "id": 9
+    },
+    {
+      "name": "NouveauProduit",
+      "prix": "0.01",
+      "img": "vues/paquet.png",
+      "EAN": "1234567891234",
+      "desc": "description du produit portant le nom <span style=\"font-weight:900\">:NouveauProduit</span><br/>suite de la description",
+      "id": 10
     }
   ]
 }

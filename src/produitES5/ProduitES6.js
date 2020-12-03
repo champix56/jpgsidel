@@ -11,25 +11,25 @@ export function Produit(params) {
     /**
      * Code à barre du produit
      */
-    const regex=/\d{13}/;
-    const regexResult=regex.exec(params.EAN);
-    this.EAN =(regexResult!==null? params.EAN:undefined);
+    const regex = /\d{13}/;
+    const regexResult = regex.exec(params.EAN);
+    this.EAN = (regexResult !== null ? params.EAN : undefined);
     /**
     * 
     */
-    this.domNode =params.node;
+    this.domNode = params.node;
     //construction
     /**
      * construction d'un produit
      */
     function init() {
         const regexImg = /^([\w.-]{1,}\/)+([\w.-]*)(.png|.jpg)$/;
-        _id     = params.id;
-        _name   = params.name;
-        _prix   = params.prix;
-        _img    = (regexImg.exec( params.img)!==null? params.img:'img/paquet.png');
-        _desc   = `description du produit portant le nom <span style="font-weight:900">:${params.name!==undefined? params.name:'produit sans nom'}</span><br/>suite de la description`;
-        
+        _id = params.id;
+        _name = params.name;
+        _prix = params.prix;
+        _img = (regexImg.exec(params.img) !== null ? params.img : 'img/paquet.png');
+        _desc = `description du produit portant le nom <span style="font-weight:900">:${params.name !== undefined ? params.name : 'produit sans nom'}</span><br/>suite de la description`;
+
         params.desc;
     }
     //execution de a construction
@@ -48,16 +48,16 @@ export function Produit(params) {
     this.setDesc = function (value) { _desc = value; }
     this.getImg = function () { return _img; }
     this.setImg = function (value) { _img = value; }
-   
+
 
     // this.onProductClick=function(event){
     this.onProductClick = (event) => {
         console.log(event);
-        alert('mon objet est cliqué id : '+_id);
+        alert('mon objet est cliqué id : ' + _id);
         //console.log(vm);
         //usage de l'alias suite a la delegation d'usage de la,fonction
         //this=> l'evenement declenché
-        formulaireProduit.produit=this;
+        formulaireProduit.produit = this;
         this.domNode.classList.add('clicked');
     }
     /**
@@ -87,7 +87,37 @@ export function Produit(params) {
         //ajout dans le parent
         desc.append(balise);
     }
-  // this.showProduct();
+    this.save = (clbk) => {
+
+        let ObjectToSend = { name: _name, prix: _prix, img: _img, EAN: this.EAN, desc: _desc };
+
+        let callmethod = (_id !== undefined ? 'PUT' : 'POST');
+        // let url ='/produits'+(_id!==undefined?`/${_id}`:'');
+        let url = 'http://localhost:5629/produits';
+        if (_id !== undefined) {
+            url += `/${_id}`;
+            ObjectToSend.id = _id;
+        }
+        let myHeaders = new Headers({
+            "Content-Type": "application/json",
+            "Accept" : "application/json"
+        });
+        fetch(url, {
+            method: callmethod, 
+            body: JSON.stringify(ObjectToSend), 
+            headers: myHeaders
+        })
+            .then((response) => response.json())
+            .then((transformedResponse)=>{
+                console.log(transformedResponse);
+                if(callmethod!=='PUT'){
+                    this.showProduct();
+                }
+                clbk(false);
+            })
+
+
+    }
 }
 
 //var produit = new Produit({ name: 'mon produit func', prix: '2.54', desc: undefined });

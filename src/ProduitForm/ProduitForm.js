@@ -69,8 +69,9 @@ class ProduitForm{
                                         EAN:document.forms['form-produit']['ean-produit'].value,
                                         prix:document.forms['form-produit']['prix-produit'].value});
         }
+        this.#_produit.save((state)=>{this.showForm(state);});
         console.log(this.#_produit);
-        this.showForm(false);
+        
     }
 }
 
