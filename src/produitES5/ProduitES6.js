@@ -1,4 +1,4 @@
-/**
+import { formulaireProduit } from "../ProduitForm/ProduitForm.js";/**
  * objet function produit 
  * @param {Object} params objet parametre contenant les valeurs initial
  */
@@ -57,7 +57,7 @@ export function Produit(params) {
         //console.log(vm);
         //usage de l'alias suite a la delegation d'usage de la,fonction
         //this=> l'evenement declenché
-
+        formulaireProduit.produit=this;
         this.domNode.classList.add('clicked');
     }
     /**
