@@ -8,5 +8,5 @@ describe('produit',function(){
     })
     it('should fill DOM element',function(){
         
-    }
-})
+    });
+});
