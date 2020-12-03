@@ -1,0 +1,37 @@
+<div class="form-produit">
+    <form action="#" role="form" name="form-produit">
+        <legend>Edition d'un produit</legend>
+
+        <div class="form-group" style="display: inline-block;">
+            <img src="img/paquet.png" alt="" style="width:256px;height:256px;border:1px solid black">
+            <label for="titre-produit">Image produit</label><br />
+            <input type="text"  class="form-control" id="image-produit"  name="image-produit" placeholder="Input field">
+        </div>
+
+        <div class="form-group" style="display: inline-block;">
+            <label for="titre-produit">Titre produit</label><br />
+            <input type="text" class="form-control" id="titre-produit" name="titre-produit" placeholder="Input field">
+        </div>
+        <div class="form-group">
+            <label for="ean-produit">EAN produit</label><br />
+            <input type="text" id="ean-produit" name="ean-produit"/>
+
+        </div>
+        <div class="form-group"  >
+            <label for="desc-produit">Description produit</label><br />
+           <textarea name="desc-produit" id="desc-produit"></textarea>
+        </div>
+        <div class="form-group"  >
+            <label for="prix-produit">Prix produit</label><br />
+           <input type="number" name="prix-produit" id="prix-produit" min="0" step="0.01"/>
+        </div>
+
+        <hr />
+        <div style="text-align: right; padding-right:20px ;">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">reset</button>
+        </div>
+    </form>
+
+
+</div>
