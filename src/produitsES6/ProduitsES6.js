@@ -65,4 +65,6 @@ produits.push(new Produit({ nom: 'Produit4', EAN: '0003' }));
 
 console.log(produits);
 
-console.log(produits.findByEAN('0001'))
+console.log(produits.findByEAN('0001'));
+export const produitListe = produits;
+export default Produits;
