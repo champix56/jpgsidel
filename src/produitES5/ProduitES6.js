@@ -2,7 +2,7 @@
  * objet function produit 
  * @param {Object} params objet parametre contenant les valeurs initial
  */
-export function Produit(params) {
+function Produit(params) {
     var _name;
     var _id;
     var _prix;
@@ -25,7 +25,7 @@ export function Produit(params) {
     function init() {
         const regexImg = /^([\w.-]{1,}\/)+([\w.-]*)(.png|.jpg)$/;
         _id     = params.id;
-        _name   = params.name;
+        _name   = (params.name!==undefined && params.name!==null?params.name:'sans nom');
         _prix   = params.prix;
         _img    = (regexImg.exec( params.img)!==null? params.img:'img/paquet.png');
         _desc   = `description du produit portant le nom <span style="font-weight:900">:${params.name!==undefined? params.name:'produit sans nom'}</span><br/>suite de la description`;
@@ -89,7 +89,7 @@ export function Produit(params) {
     }
   // this.showProduct();
 }
-
+module.exports=Produit;
 //var produit = new Produit({ name: 'mon produit func', prix: '2.54', desc: undefined });
 //var p2= Produit();
 // console.log(produit);

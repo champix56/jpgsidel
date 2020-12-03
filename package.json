@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "lite-server",
     "json": "json-server -p 5629 db/db.json",
-    "start": "npm run serve | npm run json"
+    "start": "npm run serve | npm run json",
+    "test": "./node_modules/.bin/mocha"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
   "dependencies": {
     "json-server": "^0.16.3",
     "lite-server": "^2.6.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
   }
 }

@@ -4,5 +4,4 @@ const str = `desorbaix.formation@free.fr
 let m;
 
 if ((m = regex.exec(str)) !== null) {
-  
 }
