@@ -1,97 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon 1er TP js</title>
-    
-    <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="//code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    
-    <style type="text/css">
-        #wrapper, #wrapper-2{
-            border:1px solid black;
-            width:48%;
-            display: inline-block;
-            vertical-align: top;
-        }
-         
-        .produit>div{
-            display: inline-block;
-            vertical-align: top;
-            border:1px solid black;
-        }
-        .imageProduit img{
-            width:256px;
-            height:256px;
-        }
-        .produit-prix{
-            font-size: 32pt;
-            color: darkgreen;
-            font-weight: 900;
-        }
-        .produit.clicked{
-            box-shadow: 20px 20px 35px gray;
-        }
-    </style>
+    <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title></title>
 </head>
 
 <body>
-    
-    <nav class="navbar navbar-inverse" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Title</a>
-        </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#" id="newProduct">Nouveau</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </nav>
-    
-
-
-    <div id="wrapper">
-       
-    </div>
-    
-    <div id="wrapper-2">
-       hello
-    </div>
-    <script src="src/index.js" type="module"></script>
-    <!-- <script src="src/produitsES6/ProduitsES6.js" type="module"></script> -->
-    <!-- <script src="src/index.js"></script> -->
+    <svg width="1000px" height="1000px" viewBox="-20 -20 140 140" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <desc></desc>
+        <defs>
+            <symbol id="Axes">
+                <line x1="20" y1="0" x2="20" y2="101" stroke="black" stroke-width="2" />
+                <polygon points="20,-1 25,5 15,5" />
+                <text x="112" y="115">X</text>
+                <line x1="20" y1="100" x2="120" y2="100" stroke="black" stroke-width="2" />
+                <polygon points="121,100 115,95 115,105" />
+                <text x="5" y="10">Y</text>
+                <rect x="40" y="97.5" width="1" height="5" style="fill:black" />
+                <text x="35" y="115">10</text>
+                <rect x="70" y="97.5" width="1" height="5" style="fill:black" />
+                <text x="65" y="115">20</text>
+                <rect x="100" y="97.5" width="1" height="5" style="fill:black" />
+                <text x="95" y="115">30</text>
+                <rect x="18.5" y="20" width="5" height="1" style="fill:black" />
+                <text x="3" y="25">10</text>
+                <rect x="18.5" y="50" width="5" height="1" style="fill:black" />
+                <text x="3" y="55">20</text>
+                <rect x="18" y="80" width="5" height="1" style="fill:black" />
+                <text x="3" y="85">30</text>
+            </symbol>
+            <linearGradient id="effetArrondiVertical" x1="0%" x2="100%" y1="20%" y2="0">
+                <stop offset="0%" stop-color="#B7CA79" />
+                <stop offset="80%" stop-color="#677E52" />
+            </linearGradient>
+        </defs>
+        <rect x="15" y="-0.000000000000014210854715202004" width="20" height="100.00000000000001"
+            fill="url(#effetArrondiVertical)" />
+        <circle r="2" cx="25" cy="66.66666666666666" fill="#FF5900" />
+        <line x1="25" y1="66.66666666666666" x2="55" y2="66.66666666666666" stroke="#FF5900" stroke-width="1" />
+        <rect x="45" y="66.66666666666666" width="20" height="33.333333333333336" fill="url(#effetArrondiVertical)" />
+        <circle r="2" cx="55" cy="66.66666666666666" fill="#FF5900" />
+        <line x1="55" y1="66.66666666666666" x2="85" y2="-11.111111111111128" stroke="#FF5900" stroke-width="1" />
+        <rect x="75" y="55.81239530988274" width="20" height="44.18760469011726" fill="url(#effetArrondiVertical)" />
+        <circle r="2" cx="85" cy="-11.111111111111128" fill="#FF5900" />
+        <line x1="85" y1="-11.111111111111128" x2="115" y2="0" stroke="#FF5900" stroke-width="1" />
+        <rect x="105" y="14.921273031825791" width="20" height="85.07872696817421" fill="url(#effetArrondiVertical)" />
+        <circle r="2" cx="115" cy="0" fill="#FF5900" />
+        <line x1="115" y1="0" x2="145" y2="33.33333333333333" stroke="#FF5900" stroke-width="1" />
+        <rect x="135" y="66.49916247906196" width="20" height="33.50083752093803" fill="url(#effetArrondiVertical)" />
+        <circle r="2" cx="145" cy="33.33333333333333" fill="#FF5900" />
+        <use xlink:href="#Axes" x="-15" y="0" />
+    </svg>
+    <script src="./src/index.js" type="module"></script>
 </body>
 
 </html>

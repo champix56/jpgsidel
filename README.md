@@ -1,2 +1,0 @@
-# jpgsidel
-jpg pour sidel
