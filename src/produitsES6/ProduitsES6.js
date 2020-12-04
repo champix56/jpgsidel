@@ -1,5 +1,6 @@
 import {Produit} from '../produitES5/ProduitES6.js';
 
+
 class Produits extends Array {
     #_template=null;
     constructor() {
@@ -33,6 +34,8 @@ class Produits extends Array {
      * lancement synchronisé des chargements par promises
      */
     syncLoad() {
+        console.profile('syncloadProfile');
+        console.time('syncload');
         Promise.all([this.loadFromRest(), this.loadTemplate()])
             .then(responses => {
                 console.log(responses)
@@ -40,6 +43,8 @@ class Produits extends Array {
                     elementInArray.domNode=this.#_template.cloneNode(this.#_template,true).querySelector('.produit');
                     elementInArray.showProduct();
                     document.querySelector('#wrapper').append(elementInArray.domNode);
+                    console.timeEnd('syncload');
+                    console.profileEnd('syncloadProfile');
                 });  
             });
     }
@@ -56,6 +61,7 @@ class Produits extends Array {
 const produits = new Produits();
 // produits.loadFromRest();
 // produits.loadTemplate();
+
 produits.syncLoad();
 produits.push(new Produit({ nom: 'Produit1', EAN: '0000' }));
 produits.push(new Produit({ nom: 'Produit2', EAN: '0001' }));

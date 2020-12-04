@@ -1,4 +1,5 @@
-import { formulaireProduit } from "../ProduitForm/ProduitForm.js";/**
+import { formulaireProduit } from "../ProduitForm/ProduitForm.js";
+/**
  * objet function produit 
  * @param {Object} params objet parametre contenant les valeurs initial
  */
